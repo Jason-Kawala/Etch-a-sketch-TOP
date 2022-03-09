@@ -1,0 +1,23 @@
+:root {
+    --grid-rows: 1; /* -- permet de créer une variable personnalisé pouvant être utilisé par la suite dans une propriété css via var(Variable) */
+    --grid-cols: 1;
+}
+
+
+#container {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr); /* Utilisation de var() afin de prendre la variable créé au dessus dans :root */
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    border: 1px solid red;
+}
+
+.cell {
+    border: 1px solid blue;
+    text-align: center;
+    background-color: orange;
+    font-weight: 900;
+}
+
+.row {
+    border: 1px solid black;
+}

@@ -6,6 +6,7 @@
 
 #container {
     display: grid;
+    gap: 1em;
     grid-template-rows: repeat(var(--grid-rows), 1fr); /* Utilisation de var() afin de prendre la variable créé au dessus dans :root */
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     border: 1px solid red;
@@ -16,8 +17,4 @@
     text-align: center;
     background-color: orange;
     font-weight: 900;
-}
-
-.row {
-    border: 1px solid black;
 }

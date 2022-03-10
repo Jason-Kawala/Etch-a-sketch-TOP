@@ -3,18 +3,29 @@
     --grid-cols: 1;
 }
 
+h1 {
+    text-align: center;
+}
 
 #container {
     display: grid;
-    gap: 1em;
     grid-template-rows: repeat(var(--grid-rows), 1fr); /* Utilisation de var() afin de prendre la variable créé au dessus dans :root */
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    border: 1px solid red;
+    border: 1px solid;
+    margin: 10%;
 }
 
-.cell {
-    border: 1px solid blue;
+.grid-item {
+    background-color: lightgray;
+    width: 50px;
+    height: 30px;
+    border: 1px dotted black;
     text-align: center;
-    background-color: orange;
-    font-weight: 900;
 }
+
+#main {
+    display: flex;
+    justify-content: center;
+    
+}
+

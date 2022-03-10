@@ -1,23 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
 :root {
     --grid-rows: 1; /* -- permet de créer une variable personnalisé pouvant être utilisé par la suite dans une propriété css via var(Variable) */
     --grid-cols: 1;
+    --main-font: Sofia, cursive;
 }
 
 h1 {
     text-align: center;
+    font-family: var(--main-font);
 }
 
 #container {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr); /* Utilisation de var() afin de prendre la variable créé au dessus dans :root */
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    
     border: 1px;
     margin: 5%;
     width: 960px;
     height: 800px;
 }
-
 .grid-item {
     border: 0.5px solid gray;
 }
@@ -25,11 +26,35 @@ h1 {
 #main {
     display: flex;
     justify-content: center;
-    
 }
 
 .hover {
     background-color: lightblue;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 
+.btn {
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(64, 159, 223);
+    border-radius: 5%;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: rgba(64, 159, 223, 0.61);
+    transform: scale(1.05);
+}
+
+.buttons {
+   display: flex;
+   justify-content: center;
+   gap: 5px;
+   align-items: center;
+}
+
+.input {
+    font-size: 30px;
+    text-align: center;
+}

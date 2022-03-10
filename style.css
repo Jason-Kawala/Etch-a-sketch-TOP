@@ -11,21 +11,25 @@ h1 {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr); /* Utilisation de var() afin de prendre la variable créé au dessus dans :root */
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    border: 1px solid;
-    margin: 10%;
+    
+    border: 1px;
+    margin: 5%;
+    width: 960px;
+    height: 800px;
 }
 
 .grid-item {
-    background-color: lightgray;
-    width: 50px;
-    height: 30px;
-    border: 1px dotted black;
-    text-align: center;
+    border: 0.5px solid gray;
 }
 
 #main {
     display: flex;
     justify-content: center;
     
+}
+
+.hover {
+    background-color: lightblue;
+    transition: background-color 0.2s ease-in-out;
 }
 

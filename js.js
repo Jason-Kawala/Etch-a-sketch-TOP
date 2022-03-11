@@ -2,6 +2,8 @@ let container = document.getElementById('container');
 let reset = document.getElementById('reset-btn');
 let okBtn = document.getElementById('ok-btn');
 let gridSize = 32;
+let classic = "rgba(80, 132, 173, 0.733)";
+
 
 function randColor() {
     let arrColor = [];
@@ -33,10 +35,14 @@ function randBlandColor() {
     return arrColor;
 }
 
-randColor();
+function getVal() {
+    const val = document.querySelector('input').value;
+    console.log(val);
+    return val;
+}
 
 /* Fonction de création de la grille de jeu */
-function createGrid(rows , cols) { 
+function createGrid(rows , cols) {
     let grid = document.querySelectorAll('.grid-item');
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
@@ -45,39 +51,38 @@ function createGrid(rows , cols) {
         container.appendChild(cell).className = "grid-item";
     };
 };
+
 createGrid(gridSize,gridSize);
 let grid = document.querySelectorAll('.grid-item');
 
-/* Event listener pour gérer le mouse over et le changement de couleur */
-function hoverListener() {
-    let grid = document.querySelectorAll('.grid-item');
-    grid.forEach(cell => {
-        cell.addEventListener('mouseover', function() {
-            let color = randBrightColor();
-            cell.classList.add('hover');
-            cell.style.setProperty('--hover-color',`rgba(${color[0]},${color[1]},${color[2]},${color[3]})`);
-        })
-    });
+function hoverListener(colorType) {
+    let colors = colorType;
+    console.log(colors);
+    if (colors == "rgba(80, 132, 173, 0.733)") {
+        grid.forEach(cell => {
+            cell.addEventListener('mouseover', () => {
+                cell.style.setProperty('--hover-color', classic)
+            })
+        });
     }
+    else {
+        grid.forEach(cell => {
+            cell.addEventListener('mouseover', () => {
+                cell.style.setProperty('--hover-color',`rgba(${colors[0]},${colors[1]},${colors[2]},${colors[3]})`);
+            })
+        });
+    }
+}
+
+hoverListener(classic);
 
 /* Remove color on reset button click */
-function resetListener() {
-    reset.addEventListener('click', () => {
-        while (container.firstChild) { /* Supprimer le contenu du container pour retirer toutes les div formant la grille */
-        container.firstChild.remove()
-        }
-    createGrid(gridSize,gridSize);
-    hoverListener();
-});
-}
 
-
-
-function getVal() {
-    const val = document.querySelector('input').value;
-    console.log(val);
-    return val;
-}
+reset.addEventListener('click', () => {
+    grid.forEach(cell => {
+        cell.style.setProperty('--hover-color', 'white');
+    }
+)});
 
 okBtn.addEventListener('click', () => {
     gridSize = getVal();
@@ -85,15 +90,9 @@ okBtn.addEventListener('click', () => {
         window.alert('Incorret value, please choose a grid size between 2 and 64 !');
     }
     else {
-        while (container.firstChild) { /* Supprimer le contenu du container pour retirer toutes les div formant la grille */
-            container.firstChild.remove()
-        }
-        createGrid(gridSize, gridSize);
-        hoverListener();
-        resetListener();
+        grid.forEach(cell => {
+            cell.style.setProperty('--hover-color', 'white');
+        })
     }
 });
-
-hoverListener();
-resetListener();
 

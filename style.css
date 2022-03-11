@@ -3,7 +3,7 @@
     --grid-rows: 1; /* -- permet de créer une variable personnalisé pouvant être utilisé par la suite dans une propriété css via var(Variable) */
     --grid-cols: 1;
     --main-font: Sofia, cursive;
-    --hover-color: rgba(80, 132, 173, 0.733);
+    --hover-color: white;
 }
 
 h1 {
@@ -23,6 +23,7 @@ h1 {
 }
 .grid-item {
     border: 0.5px solid black;
+    background-color: var(--hover-color);
 }
 
 #main {

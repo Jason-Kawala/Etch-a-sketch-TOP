@@ -40,7 +40,6 @@ h1 {
     background-color: rgb(64, 159, 223);
     border-radius: 5%;
     border: 1px solid black;
-    font-weight: bold;
 }
 
 .btn:hover {
@@ -50,6 +49,7 @@ h1 {
 
 .buttons {
    display: flex;
+   flex-direction: column;
    justify-content: center;
    gap: 5px;
    align-items: center;
@@ -58,4 +58,16 @@ h1 {
 .input {
     font-size: 30px;
     text-align: center;
+}
+
+#classic {
+    background-color: rgba(80, 132, 173, 0.733);
+}
+
+#bright {
+    background-color: orange;
+}
+
+#bland {
+    background-color: pink;
 }

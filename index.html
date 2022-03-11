@@ -11,15 +11,22 @@
 
     <h1>Etch-A-Sketch</h1>
     <div class="buttons">
-        <button id="reset-btn" class="btn">Reset grid</button>
-        <input placeholder="Grid size (2 to 64)" class="input" ><button id="ok-btn" class="btn">Ok</button>
+        <div class="grid-options">
+            <button id="reset-btn" class="btn">Reset grid</button>
+            <input placeholder="Grid size (2 to 64)" class="input" ><button id="ok-btn" class="btn">Ok</button>
+        </div>
+        <div class="colors">
+            <button id="classic" class="btn">Classic</button>
+            <button id="bright" class="btn">Bright rainbow</button>
+            <button id="bland" class="btn">Bland rainbow</button>
+        </div>
     </div>
 
     <div id="main">
         <div id="container">
         </div>
     </div>
-    
+
 </body>
 <script src="js.js"></script>
 </html>

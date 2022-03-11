@@ -8,7 +8,27 @@ function randColor() {
     let r = Math.floor(Math.random()*255);
     let g = Math.floor(Math.random()*255);
     let b = Math.floor(Math.random()*255);
-    let alpha = Math.random();
+    let alpha = Math.random(); /* Couleur 'normales' */
+    arrColor.push(r,g,b,alpha);
+    return arrColor;
+}
+
+function randBrightColor() {
+    let arrColor = [];
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    let alpha = (Math.random()/2) + 0.5; /* Avoir des couleurs plus vives */
+    arrColor.push(r,g,b,alpha);
+    return arrColor;
+}
+
+function randBlandColor() {
+    let arrColor = [];
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    let alpha = Math.random()/2; /* Avoir des couleurs plus vives */
     arrColor.push(r,g,b,alpha);
     return arrColor;
 }
@@ -33,7 +53,9 @@ function hoverListener() {
     let grid = document.querySelectorAll('.grid-item');
     grid.forEach(cell => {
         cell.addEventListener('mouseover', function() {
+            let color = randBrightColor();
             cell.classList.add('hover');
+            cell.style.setProperty('--hover-color',`rgba(${color[0]},${color[1]},${color[2]},${color[3]})`);
         })
     });
     }

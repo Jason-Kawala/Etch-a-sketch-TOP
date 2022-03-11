@@ -30,7 +30,6 @@ function hoverListener() {
 
 /* Remove color on reset button click */
 function resetListener() {
-    hoverListener();
     reset.addEventListener('click', () => {
         while (container.firstChild) { /* Supprimer le contenu du container pour retirer toutes les div formant la grille */
         container.firstChild.remove()

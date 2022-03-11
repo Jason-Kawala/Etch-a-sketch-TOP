@@ -90,6 +90,7 @@ okBtn.addEventListener('click', () => {
         window.alert('Incorret value, please choose a grid size between 2 and 64 !');
     }
     else {
+        createGrid(gridSize,gridSize);
         grid.forEach(cell => {
             cell.style.setProperty('--hover-color', 'white');
         })

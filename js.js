@@ -3,6 +3,17 @@ let reset = document.getElementById('reset-btn');
 let okBtn = document.getElementById('ok-btn');
 let gridSize = 32;
 
+function randColor() {
+    let arrColor = [];
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    let alpha = Math.random();
+    arrColor.push(r,g,b,alpha);
+    return arrColor;
+}
+
+randColor();
 
 /* Fonction de création de la grille de jeu */
 function createGrid(rows , cols) { 
@@ -14,7 +25,6 @@ function createGrid(rows , cols) {
         container.appendChild(cell).className = "grid-item";
     };
 };
-
 createGrid(gridSize,gridSize);
 let grid = document.querySelectorAll('.grid-item');
 

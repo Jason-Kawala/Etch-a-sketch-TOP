@@ -17,6 +17,7 @@ h1 {
     grid-template-columns: repeat(var(--grid-cols), 1fr); /* ^ */
     border: 1px;
     margin: 5%;
+    margin-top: 20px;
     width: 960px;
     height: 800px;
 }
@@ -51,7 +52,7 @@ h1 {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   gap: 5px;
+   gap: 10px;
    align-items: center;
 }
 

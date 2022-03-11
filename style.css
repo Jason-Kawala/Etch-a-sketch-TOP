@@ -30,7 +30,7 @@ h1 {
 
 .hover {
     background-color: lightblue;
-    transition: background-color 0.1s ease-in-out;
+    /* transition: background-color 0.1s ease-in-out; */
 }
 
 .btn {
